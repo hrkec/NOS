@@ -1,0 +1,60 @@
+Rješenje druge laboratorijske vježbe je ostvareno u programskom jeziku Python na operacijskom sustavu Linux (Ubuntu).
+Za pokretanje rješenja, potrebni su paketi:
+	tkinter za grafičko korisničko sučelje i 
+	pycryptodome za kriptografiju
+
+Izvorni tekst rješenja se u datoteci lab2.py.
+
+Rješenje se pokreće izvršavanjem naredbe:
+	python lab2.py
+
+Napomena: U nazivu RSA ključeva, prvo je navedeno je li javni (public) ili privatni (private) pa broj 1 (označava pošiljatelja) ili 2 (označava primatelja) pa veličina ključa.
+Tako su ključevi public1_2048.pem i private1_2048.pem jedan RSA par ključeva pošiljatelja.
+
+Izvršavanjem navedene naredbe, pokreće se grafičko sučelje.
+Pri pokretanju, pojave se dva gumba : 
+	1) Izrada pečata
+	2) Provjera pečata
+
+Sve datoteke za generiranje i provjeru pečata su unaprijed podešene. Iz tog razloga, zadane datoteke moraju postojati unutar direktorija.
+
+Pritiskom na gumb 1, otvara se prozor kao na slici gui1.jpg. Omogućeno je stvaranje digitalnog pečata.
+Prvo je potrebno upisati poruku koju se želi kriptirati. Prihvaćaju se samo ASCII znakovi.
+Zatim se odabire simetrični kriptosustav i način kriptiranja odabirom odgovarajućih gumbi.
+Pritiskom na gumb "Odaberi simetrični ključ" moguće je odabrati ključ za kriptiranje poruke. Unaprijed su zadana 3 ključa različitih veličina: 
+	key16.pem veličine 16B 
+	key24.pem veličine 24B i 
+	key32.pem veličine 32B - moguće ga je koristiti samo za AES kriptiranje
+
+Pritiskom na gumb "Odaberi javni ključ primatelja" moguće je odabrati javni RSA ključ primatelja kojim se kriptira ključ kojim je kriptirana poruka.
+
+Pritiskom na gumb "Generiraj omotnicu" generira se digitalna omotnica u datoteku envelope.bin. 
+
+Pritiskom na gumb "Odaberi svoj privatni ključ" moguće je odabrati privatni RSA ključ za kriptiranje sažetka poruke.
+
+Zatim je moguće odabrati funkciju za izračunavanje sažetka poruke:
+	SHA3-256 i
+	SHA3-512
+
+Pritiskom na gumb "Generiraj potpis" generira se digitalni potpis koji se zapisuje u datoteku signature.bin.
+
+Generiranjem digitalne omotnice i digitalnog potpisa, generiran je digitalni pečat.
+
+
+
+Pritiskom na gumb 2, otvara se prozor kao na slici gui2.jpg. Omogućena je provjera digitalnog pečata. 
+Pritiskom na gumb "Odaberi omotnicu" moguće je odabrati digitalnu omotnicu. Unaprijed je odabrana datoteka ./envelope.bin.
+
+Zatim se odabire simetrični kriptosustav i način kriptiranja odabirom odgovarajućih gumbi.
+
+Pritiskom na gumb "Odaberi svoj privatni ključ" moguće je odabrati privatni RSA ključ primatelja.
+
+Pritiskom na gumb "Otvori omotnicu" otvara se digitalna omotnica iz odabrane datoteke i zatim se ispisuje dekriptirana poruka unutar grafičkog sučelja u obliku 'Primljena poruka: [poruka]'
+
+Pritiskom na gumb "Odaberi digitalni potpis" moguće je odabrati datoteku s digitalnim potpisom.
+
+Pritiskom na gumb "Odaberi javni ključ pošiljatelja" moguće je odabrati javni RSA ključ pošiljatelja.
+
+Zatim se odabire funkcija za izračunavanje sažetka poruke.
+
+Pritiskom na gumb "Provjeri potpis" provjerava se digitalni potpis iz odabrane datoteke i zatim se ispisuje valjanost potpisa unutar grafičkog sučelja.
