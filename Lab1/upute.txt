@@ -1,0 +1,33 @@
+Rješenje laboratorijske vježbe je ostvareno u programskom jeziku C++ na operacijskom sustavu Linux (Ubuntu).
+
+
+
+Izvorni kodovi za rješenje prvog zadatka se nalaze u datotekama:
+	konstante.h
+	poruka.h
+	poruka.cpp
+	posjetitelj.cpp
+	vrtuljak.cpp
+
+Prvo je potrebno prevesti program posjetitelj.cpp, koristeći prevoditelj g++ u naredbenoj liniji (Terminalu):
+	g++ konstante.h poruka.h poruka.cpp posjetitelj.cpp -o posjetitelj
+
+Nužno je da je izvršna datoteka nazvana "posjetitelj" jer program vrtuljak stvara procese programa posjetitelj.
+
+Zatim je potrebno prevesti program vrtuljak.cpp, koristeći prevoditelj g++ u naredbenoj liniji:
+	g++ konstante.h poruka.h poruka.cpp vrtuljak.cpp -o vrtuljak
+
+Naziv izvršne datoteke programa vrtuljak je proizvoljan.
+Prvi zadatak se pokreće pokretanjem izvršne datoteke programa vrtuljak, npr: naredbom ./vrtuljak u naredbenoj liniji.
+
+
+
+Izvorni kod za rješenje drugog zadatka laboratorijske vježbe se nalazi u datoteci:
+	filozofi.cpp
+
+Program filozofi.cpp se također prevodi prevoditeljem g++:
+	g++ -std=gnu++11 filozofi.cpp -o filozofi 
+	-- neki stari prevoditelji ne podržavaju pojedine naredbe u izvornom kodu pa se stoga dodaje -std=gnu++11 prilikom prevođenja
+
+Drugi zadatak se pokreće pokretanjem izvršne datoteke programa filozofi, npr: naredbom ./filozofi u naredbenoj liniji.
+Nakon pokretanja izvršne datoteke ./filozofi, potrebno je upisati broj filozofa koji sudjeluje u konferenciji.
